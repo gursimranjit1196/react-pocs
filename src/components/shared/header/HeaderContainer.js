@@ -7,7 +7,7 @@ class HeaderContainer extends React.Component {
   render() {
     return (
       <div style = {{ backgroundColor: '#D6EAF8', textAlign: "center" }}>
-        <Link to = "/" >HOME</Link> | <Link to = "/todo" >TODO</Link>
+        <Link to = "/" >HOME</Link> | <Link to = "/todo" >TODO</Link> | <Link to = "/users">USERS</Link>
       </div>
     );
   }
