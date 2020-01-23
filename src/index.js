@@ -8,7 +8,4 @@ import './index.css';
 import App from './App';
 
 
-const store = rootStore
-
-
-ReactDOM.render(<Provider store = { store }><App /></Provider>, document.getElementById('customRoot'))
+ReactDOM.render(<Provider store = { rootStore }><App /></Provider>, document.getElementById('customRoot'))

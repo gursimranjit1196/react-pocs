@@ -5,12 +5,18 @@ import { connect } from "react-redux";
 import CustomInput from "../../shared/formElements/input/CustomInput";
 import CustomSelect from "../../shared/formElements/select/CustomSelect";
 
-import ACTIONS from "../../../store/user/actions";
+import * as UserActions from "../../../store/user/actions";
 import CreateUserForm from "../../../constants/user/CreateUserForm";
 
 class UserContainer extends React.Component {
 
   state = CreateUserForm
+
+
+  componentDidMount() {
+    this.props.getUserList()
+  }
+
 
   valueChangeHandler = (event) => {
     let userForm = { ...this.state.userForm }
@@ -71,15 +77,18 @@ class UserContainer extends React.Component {
 
 }
 
+
 const mapStateToProps = state => {
   return {
       userList: state.User.list
   }
 }
 
+
 const mapDispatchToProps = dispatch => {
   return {
-      addUser: (user) => dispatch({ type: ACTIONS.ADD_USER, payload: user })
+      addUser: (user) => dispatch(UserActions.addUser(user)),
+      getUserList: () => dispatch(UserActions.getUserList())
   }
 }
 
